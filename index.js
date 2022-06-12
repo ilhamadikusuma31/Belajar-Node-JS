@@ -3,6 +3,8 @@
 //     area: (x, y) => (x * y)
 // };
 
+var rect = require('./persegi');
+
 function solveRect(l, b) {
     console.log("Solving for rectangle with l = " + l + " and b = " + b);
 
@@ -10,8 +12,8 @@ function solveRect(l, b) {
         console.log("Rectangle dimensions should be greater than zero:  l = " +
             l + ",  and b = " + b);
     } else {
-        console.log("The area of the rectangle is " + rect.area(l, b));
-        console.log("The perimeter of the rectangle is " + rect.perimeter(l, b));
+        console.log("The area of the rectangle is " + rect.luas(l, b));
+        console.log("The perimeter of the rectangle is " + rect.keliling(l, b));
     }
 }
 
