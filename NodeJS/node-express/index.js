@@ -13,10 +13,20 @@ app.use(bodyParser.json());
 
 
 //main program
+
+//--dish--
 const dishRouter = require('./routes/dishRouter');
 app.use('/dishes', dishRouter);
 
+//--promotion--
+const promoRouter = require('./routes/promoRouter');
+app.use('/promotions', promoRouter);
 
+//--leader--
+const leaderRouter = require('./routes/leaderRouter');
+app.use('/leaders', leaderRouter);
+
+//akhir main program
 
 app.use(express.static(__dirname + '/public'));
 app.use((req, res, next) => {
