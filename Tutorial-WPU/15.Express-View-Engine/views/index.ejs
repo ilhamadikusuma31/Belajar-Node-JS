@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Js Web Server | <%= judul %>
+    </title>
+</head>
+
+<body>
+    <!-- <% const nama="ilhamadi" %>
+        <h1>ini halaman index</h1>
+        <p>hai <%= nama %> semoga harimu menyenangkan </p> -->
+
+    <h1>Daftar Mahasiswa</h1>
+
+    <% mahasiswa.forEach(m=> { %>
+        <ul>
+            <li>
+                nama mahasiswa : <%= m.nama %>
+            </li>
+            <li>
+                prodi : <%= m.prodi %>
+            </li>
+        </ul>
+        <% }) %>
+
+</body>
+
+</html>
