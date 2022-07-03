@@ -1,11 +1,13 @@
 const { render } = require('ejs');
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const expressLayouts = require('express-ejs-layouts'); //ini biar bisa layout jadi satu template main-layouts
+const app = express();
+const port = 3000;
 
 
+//persiapan buat layouting template
 app.set('view engine', 'ejs' );
-
+app.use(expressLayouts);
 
 
 const mahasiswa = [
@@ -26,17 +28,18 @@ app.get('/', (req, res) => {
     //karena pake ejs tinggal panggil nama file didalam views
     res.render('index',{
         judul:'halaman home',
-        mahasiswa:mahasiswa
+        mahasiswa:mahasiswa,
+        layout:'layouts/main-layouts'
     });
     
 });
 
 app.get('/tentang', (req, res) => {
-    res.render('about');
+    res.render('about',{judul:'halaman about',layout:'layouts/main-layouts'});
 });
 
 app.get('/kontak', (req, res) => {
-    res.render('contacts');
+    res.render('contacts',{judul:'halaman contacts',layout:'layouts/main-layouts'});
 });
 
 
