@@ -1,0 +1,34 @@
+<h1 class="text-success">halaman kontak</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nama</th>
+            <th scope="col">NIM</th>
+            <th scope="col">NomorHp</th>
+            <th scope="col">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% let nomor=1 %>
+            <% contacts.forEach(c=> { %>
+                <tr>
+                    <th scope="row">
+                        <%= nomor++ %>
+                    </th>
+                    <td>
+                        <%= c.nama %>
+                    </td>
+                    <td>
+                        <%= c.nim %>
+                    </td>
+                    <td>
+                        <%= c.noHp %>
+                    </td>
+                    <td> <a href="/kontak/<%= c.nama %>"
+                            class="btn btn-success badge rounded-pill text-bg-success">edit</a>
+                    </td>
+                </tr>
+                <% }) %>
+    </tbody>
+</table>
